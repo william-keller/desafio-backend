@@ -1,0 +1,22 @@
+{
+  "name": "store",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "mongoose": "^5.6.4"
+  },
+  "keywords": [],
+  "author": "William Keller",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
