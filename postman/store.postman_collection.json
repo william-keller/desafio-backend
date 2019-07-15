@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "a9e8a055-5042-40aa-8778-72c777bbc4b1",
+		"name": "store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addProduct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"product_id\":\"d2eda25e-9757-11e9-bc42-526af7764f64\",\r\n   \"artist\":\"Pink Floyd\",\r\n   \"year\":1973,\r\n   \"album\":\"Dask Side of The Moon\",\r\n   \"price\":250,\r\n   \"store\":\"Minha Loja de Discos\",\r\n   \"thumb\":\"https://images-na.ssl-images-amazon.com/images/I/61R7gJadP7L._SX355_.jpg\",\r\n   \"date\":\"26/11/2018\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/store/api/v1/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"api",
+						"v1",
+						"product"
+					]
+				},
+				"description": "POST /store/api/v1/product\r\n\r\nEsse método deve receber um item novo e persistir no banco de dados.\r\n\r\n{\r\n   \"product_id\":\"d2eda25e-9757-11e9-bc42-526af7764f64\",\r\n   \"artist\":\"Pink Floyd\",\r\n   \"year\":1973,\r\n   \"album\":\"Dask Side of The Moon\",\r\n   \"price\":250,\r\n   \"store\":\"Minha Loja de Discos\",\r\n   \"thumb\":\"https://images-na.ssl-images-amazon.com/images/I/61R7gJadP7L._SX355_.jpg\",\r\n   \"date\":\"26/11/2018\"\r\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "getProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/store/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"api",
+						"v1",
+						"products"
+					]
+				},
+				"description": "GET /store/api/v1/products\r\n\r\nRetornar uma lista de produtos no seguinte formato JSON\r\n\r\n[\r\n  {\r\n    \"product_id\":\"d2eda25e-9757-11e9-bc42-526af7764f64\",\r\n    \"artist\":\"Pink Floyd\",\r\n    \"year\":1973,\r\n    \"album\":\"Dask Side of The Moon\",\r\n    \"price\":250,\r\n    \"store\":\"Minha Loja de Discos\",\r\n    \"thumb\":\"https://images-na.ssl-images-amazon.com/images/I/61R7gJadP7L._SX355_.jpg\",\r\n    \"date\":\"26/11/2018\"\r\n  },\r\n  {\r\n    \"product_id\":\"4a149a9a-9758-11e9-bc42-526af7764f64\",\r\n    \"artist\":\"U2\",\r\n    \"year\":1993,\r\n    \"album\":\"Zooropa\",\r\n    \"price\":100,\r\n    \"store\":\"Super Discos\",\r\n    \"thumb\":\"https://images-na.ssl-images-amazon.com/images/I/81ZmhD2lO8L._SL1200_.jpg\",\r\n    \"date\":\"01/02/2019\"\r\n  },\r\n  {\r\n    \"product_id\":\"53f2b33a-9758-11e9-bc42-526af7764f64\",\r\n    \"artist\":\"The Beatles\",\r\n    \"year\":1969,\r\n    \"album\":\"Abbey Road\",\r\n    \"price\":180,\r\n    \"store\":\"Old School Discos\",\r\n    \"thumb\":\"https://images-na.ssl-images-amazon.com/images/I/919WO8q-nnL._SL1500_.jpg\",\r\n    \"date\":\"13/06/2019\"\r\n  }\r\n]"
+			},
+			"response": []
+		},
+		{
+			"name": "addToCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"cart_id\":\"c5b6c552-9757-11e9-bc42-526af7764f64\",\r\n   \"client_id\":\"fac3591c-9785-11e9-bc42-526af7764f64\",\r\n   \"product_id\":\"d2eda25e-9757-11e9-bc42-526af7764f64\",\r\n   \"date\":\"26/11/2018\",\r\n   \"time\":\"18:33:12\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/store/api/v1/add_to_cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"api",
+						"v1",
+						"add_to_cart"
+					]
+				},
+				"description": "POST /store/api/v1/add_to_cart\r\n\r\nAdicionar item ao carrinho.\r\n\r\n{\r\n   \"cart_id\":\"c5b6c552-9757-11e9-bc42-526af7764f64\",\r\n   \"client_id\":\"fac3591c-9785-11e9-bc42-526af7764f64\",\r\n   \"product_id\":\"d2eda25e-9757-11e9-bc42-526af7764f64\",\r\n   \"date\":\"26/11/2018\"\r\n   \"time\":\"18:33:12\"\r\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "buy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"client_id\":\"fac3591c-9785-11e9-bc42-526af7764f64\",\r\n   \"cart_id\":\"c5b6c552-9757-11e9-bc42-526af7764f64\",\r\n   \"client_name\":\"John Snow\",\r\n   \"value_to_pay\":280,\r\n   \"credit_card\":{\r\n      \"number\":\"1234123412341234\",\r\n      \"cvv\":111,\r\n      \"exp_date\":\"06/22\",\r\n      \"card_holder_name\":\"John S\"\r\n   }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/store/api/v1/buy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"api",
+						"v1",
+						"buy"
+					]
+				},
+				"description": "POST /store/api/v1/buy\r\n\r\nFinalizar a compra.\r\n\r\n{\r\n   \"client_id\":\"fac3591c-9785-11e9-bc42-526af7764f64\",\r\n   \"cart_id\":\"c5b6c552-9757-11e9-bc42-526af7764f64\",\r\n   \"client_name\":\"John Snow\",\r\n   \"value_to_pay\":280,\r\n   \"credit_card\":{\r\n      \"number\":\"1234123412341234\",\r\n      \"cvv\":111,\r\n      \"exp_date\":\"06/22\",\r\n      \"card_holder_name\":\"John S\",\r\n   }\r\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/store/api/v1/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"api",
+						"v1",
+						"history"
+					]
+				},
+				"description": "GET /store/api/v1/history\r\n\r\nEsse método deve retornar todos as compras realizadas na API\r\n\r\n[\r\n   {\r\n      \"client_id\":\"fac3591c-9785-11e9-bc42-526af7764f64\",\r\n      \"order_id\":\"569c30dc-6bdb-407a-b18b-3794f9b206a1\",\r\n      \"card_number\":\"**** **** **** 1234\",\r\n      \"value\":100,\r\n      \"date\":\"21/08/2018\"\r\n   },\r\n   {\r\n      \"client_id\":\"fac3591c-9785-11e9-bc42-526af7764f64\",\r\n      \"order_id\":\"569c30dc-6bdb-407a-b18b-3794f9b206a2\",\r\n      \"card_number\":\"**** **** **** 1234\",\r\n      \"value\":280,\r\n      \"date\":\"20/02/2019\"\r\n   },\r\n   {\r\n      \"client_id\":\"fac3591c-9785-11e9-bc42-526af7764f64\",\r\n      \"order_id\":\"569c30dc-6bdb-407a-b18b-3794f9b206aa\",\r\n      \"card_number\":\"**** **** **** 1234\",\r\n      \"value\":500,\r\n      \"date\":\"29/06/2019\"\r\n   }\r\n]"
+			},
+			"response": []
+		},
+		{
+			"name": "historyByClientId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/store/api/v1/history/fac3591c-9785-11e9-bc42-526af7764f64",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"api",
+						"v1",
+						"history",
+						"fac3591c-9785-11e9-bc42-526af7764f64"
+					]
+				},
+				"description": "GET /store/api/v1/history/{clientId}\r\n\r\nChamada da API deve retornar todos as compras realizadas por um cliente específico\r\n\r\n[\r\n   {\r\n      \"client_id\":\"fac3591c-9785-11e9-bc42-526af7764f64\",\r\n      \"order_id\":\"569c30dc-6bdb-407a-b18b-3794f9b206a1\",\r\n      \"value\":180,\r\n      \"date\":\"19/01/2019\",\r\n      \"card_number\":\"**** **** **** 1234\"\r\n   },\r\n   {\r\n      \"client_id\":\"fac3591c-9785-11e9-bc42-526af7764f64\",\r\n      \"order_id\":\"569c30dc-6bdb-407a-b18b-3794f9b206a2\",\r\n      \"value\":100,\r\n      \"date\":\"20/06/2019\",\r\n      \"card_number\":\"**** **** **** 1234\"\r\n   }\r\n]"
+			},
+			"response": []
+		}
+	]
+}
