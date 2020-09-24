@@ -3,7 +3,6 @@
 const express = require('express');
 const Product = require('../models/productModel');
 
-
 // ROTA PARA ADICIONAR PRODUTO
 const addProductRouter = express.Router();
 addProductRouter.post('/', async(req, res) => {
@@ -27,7 +26,6 @@ addProductRouter.post('/', async(req, res) => {
         });
     }
 });
-
 
 // ROTA PARA LISTAR TODOS PRODUTOS
 const getProductsRouter = express.Router();
